@@ -1,0 +1,16 @@
+# compiled file
+**/a.out
+**/main
+
+# python compiled file
+**/__pycache__
+**/*.pyc
+
+# backup files
+**/.*.swp
+
+# reports
+**/*.doc
+**/*.docx
+**/*.pdf
+
