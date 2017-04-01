@@ -14,3 +14,7 @@
 **/*.docx
 **/*.pdf
 
+# screen shots
+**/*.jpg
+**/*.png
+**/*.ps

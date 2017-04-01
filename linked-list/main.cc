@@ -1,3 +1,9 @@
+/**
+ * main function here.
+ * 2016220204004 信息与软件工程学院 软件工程（软件技术） 叶鉴赏
+ * Email: sir@xris.co
+ */
+
 #include <map>
 #include <iostream>
 #include <string>
@@ -22,65 +28,66 @@ Please input command: ";
 map<string, singly_linked_list<stu_info>> db;
 
 void all() {
+  cout << "\033[1m";
   for (auto it = db.begin(); it != db.end(); ++it) {
     cout << it->first << ' ';
   }
-  cout << endl;
+  cout << "\033[0m" << endl;
 }
 
 void create(const string &list_name) {
   if (db.find(list_name) != db.end()) {
-    cout << "List exists." << endl;
+    cerr << "\033[1;31mList exists.\033[0m" << endl;
   } else {
     db[list_name] = singly_linked_list<stu_info>();
-    cout << "Create successfully." << endl;
+    cerr << "\033[1;32mCreate successfully.\033[0m" << endl;
   }
 }
 
 void deletes(const string &list_name) {
   auto it = db.find(list_name);
   if (it == db.end()) {
-    cout << "List not exists." << endl;
+    cerr << "\033[1;31mList not exists.\033[0m" << endl;
   } else {
     db.erase(it);
-    cout << "Delete successfully." << endl;
+    cerr << "\033[1;32mDelete successfully.\033[0m" << endl;
   }
 }
 
 void show(const string &list_name) {
   auto it = db.find(list_name);
   if (it == db.end()) {
-    cout << "List not exists." << endl;
-  } else cout << it->second << endl;
+    cerr << "\033[1;31mList not exists.\033[0m" << endl;
+  } else cout << "\033[1m" << it->second << "\033[0m" << endl;
 }
 
 void insert(const string &list_name, const stu_info &student) {
   auto it = db.find(list_name);
   if (it == db.end()) {
-    cout << "List not exists." << endl;
+    cerr << "\033[1;31mList not exists.\033[0m" << endl;
   } else {
     it->second.push_back(student);
-    cout << "Insert successfully." << endl;
+    cerr << "\033[1;32mInsert successfully.\033[0m" << endl;
   }
 }
 
 void remove(const string &list_name, const stu_info &student) {
   auto it = db.find(list_name);
   if (it == db.end()) {
-    cout << "List not exists." << endl;
+    cerr << "\033[1;31mList not exists.\033[0m" << endl;
   } else {
     it->second.remove(student);
-    cout << "Remove successfully." << endl;
+    cerr << "\033[1;32mRemove successfully.\033[0m" << endl;
   }
 }
 
 void sort(const string &list_name) {
   auto it = db.find(list_name);
   if (it == db.end()) {
-    cout << "List not exists." << endl;
+    cerr << "\033[1;31mList not exists.\033[0m" << endl;
   } else {
     it->second.sort(increase);
-    cout << "Sort successfully." << endl;
+    cerr << "\033[1;32mSort successfully.\033[0m" << endl;
   }
 }
 
@@ -92,7 +99,7 @@ void sort(const string &list_name) {
 void merge(const string &list0, const string &list1) {
   auto it0 = db.find(list0), it1 = db.find(list1);
   if (it0 == db.end() || it1 == db.end()) {
-    cout << "List not exists." << endl;
+    cerr << "\033[1;31mList not exists.\033[0m" << endl;
   } else {
     /**
      * When use function merge, we have to ensure two lists are both sorted.
@@ -100,7 +107,7 @@ void merge(const string &list0, const string &list1) {
      */
     it0->second.sort(increase); it1->second.sort(increase);
     it0->second.sorted_uniqued_reverse_merge(it1->second);
-    cout << "Merge successfully." << endl;
+    cerr << "\033[1;32mMerge successfully.\033[0m" << endl;
   }
 }
 
@@ -112,7 +119,7 @@ int main() {
     cout << usage;
     cin >> command;
     if (cin.eof()) {
-      cout << "Bye!" << endl;
+      cerr << "\033[1mBye!\033[0m" << endl;
       return 0;
     } else if (command == "all") {
       all();
@@ -134,9 +141,9 @@ int main() {
       cin >> list_name >> another_list;
       merge(list_name, another_list);
     } else {
-      cout << "Command not found, try again." << endl;
-      cout << "Press Ctrl+C or EOF to exit the program." << endl;
-      cout << "i.e. Ctrl+D in Unix-like system and Ctrl+Z in Windows." << endl;
+      cerr << "\033[1;31mCommand not found, try again.\033[0m" << endl;
+      cerr << "Press Ctrl+C or EOF to exit the program." << endl;
+      cerr << "i.e. Ctrl+D in Unix-like system and Ctrl+Z in Windows." << endl;
     }
     while (cin.get() != '\n');
     cout << endl;

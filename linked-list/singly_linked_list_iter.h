@@ -4,6 +4,8 @@
  * but my teacher said "Why not?".
  * Well so I just simply try it.
  * Never used in this project.
+ * 2016220204004 信息与软件工程学院 软件工程（软件技术） 叶鉴赏                 
+ * Email: sir@xris.co
  */
 
 #ifdef _SINGLY_LINKED_LIST_H_

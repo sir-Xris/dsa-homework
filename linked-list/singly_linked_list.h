@@ -1,6 +1,8 @@
 /**
  * Simulation of std::forward_list in STL, but somehow different.
  * Implemented some functions, iterator. Too busy to fully implement STL.
+ * 2016220204004 信息与软件工程学院 软件工程（软件技术） 叶鉴赏                 
+ * Email: sir@xris.co
  */
 #ifndef _SINGLY_LINKED_LIST_H_
 #define _SINGLY_LINKED_LIST_H_ 1

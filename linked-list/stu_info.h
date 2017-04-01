@@ -1,6 +1,8 @@
 /**                                                                             
  * Just a declaration and defination of stu_info.
  * Requirement of our homework.
+ * 2016220204004 信息与软件工程学院 软件工程（软件技术） 叶鉴赏                 
+ * Email: sir@xris.co
  */
 #ifndef _STU_INFO_H_
 #define _STU_INFO_H_ 1
