@@ -50,7 +50,7 @@ huffman_tree::huffman_tree(const T frequency[256]) {
   for (int i = 0; i != 256; ++i)
     if (std::abs(frequency[i]) > FLT_EPSILON)
       forest.push(new node{char(i), frequency[i], nullptr, nullptr});
-  while (forest.size() >= 1) {
+  while (forest.size() > 1) {
     node *min1 = forest.top(); forest.pop();
     node *min2 = forest.top(); forest.pop();
     forest.push(new node{-1, min1->frequency + min2->frequency, min1, min2});
