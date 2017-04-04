@@ -14,3 +14,9 @@ According to homework requirement, implemented an extremely strange merge functi
 
 Uploaded with my benchmark test source codes. I just found that benchmark should be easier if I use STL \<forward\_list\>.
 
+## Huffman Tree and Huffman Encode
+
+No benchmark test...
+
+use a frequency array to construct Huffman tree. Only accept ASCII characters.
+
