@@ -1,6 +1,7 @@
 #include "huffman_tree.h"
 #include <algorithm>
 #include <bitset>
+#include <iomanip>
 #include <iostream>
 #include <string>
 using namespace std;
@@ -27,9 +28,11 @@ int main() {
   auto stop = unique(message.begin(), message.end());
   message.resize(distance(message.begin(), stop));
   /* output huffman code for each character */
-  cout << endl << "\033[1m : ASCII   \tHuffman\033[0m" << endl;
-  for (auto it: message)
-    cout << it << ": " << bitset<8>(it) << '\t' << h.encode(it) << endl;
+  cout << endl << "\033[1m freq:  ASCII       Huffman\033[0m" << endl;
+  for (auto it: message) {
+    cout << it << setw(4) << frequency[it] << ":  ";
+    cout << bitset<8>(it) << "    " << h.encode(it) << endl;
+  }
   /* decode huffman code */
   cout << endl << "\033[1mdecoded:\033[0m" << endl;
   cout << h.decode(cipher) << endl;
