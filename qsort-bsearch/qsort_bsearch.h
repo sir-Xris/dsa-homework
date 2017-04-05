@@ -2,14 +2,17 @@
 #ifndef _QSORT_BSEARCH_H_
 # define _QSORT_BSEARCH_H_
 
-#include <algorithm>
-
 namespace xris {
 
 enum sort_order {
   decrease,
   increase,
 };
+
+template <typename elem_t>
+void swap(elem_t &l, elem_t &r) {
+  elem_t t = l; l = r; r = t;
+}
 
 /**
  * sort an array.
@@ -27,7 +30,7 @@ void quick_sort(elem_t *s, elem_t *t, sort_order o = increase) {
   do {
     while (*l < m == o && *l != m) ++l;
     while (*r > m == o && *r != m) --r;
-    if (l <= r) std::swap(*l++, *r--);
+    if (l <= r) xris::swap(*l++, *r--);
   } while (l <= r);
   quick_sort(s, r + 1, o); quick_sort(l, t, o);
 }
