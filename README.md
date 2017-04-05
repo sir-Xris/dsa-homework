@@ -20,3 +20,9 @@ No benchmark test...
 
 use a frequency array to construct Huffman tree. Only accept ASCII characters.
 
+## Quicksort and Binary Search
+
+Too young too simple, sometimes naive.
+
+I have nothing to tell.
+
