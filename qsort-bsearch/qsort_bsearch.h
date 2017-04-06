@@ -1,4 +1,3 @@
-
 #ifndef _QSORT_BSEARCH_H_
 # define _QSORT_BSEARCH_H_
 
@@ -14,6 +13,25 @@ void swap(elem_t &l, elem_t &r) {
   elem_t t = l; l = r; r = t;
 }
 
+template <typename elem_t>
+elem_t max(const elem_t &l, const elem_t &r) {
+  return l > r ? l : r;
+}
+
+template <typename elem_t>
+elem_t min(const elem_t &l, const elem_t &r) {
+  return l > r ? r : l;
+}
+
+template <typename elem_t>
+elem_t middle(const elem_t &l, const elem_t &m, const elem_t &r) {
+  elem_t maximum = max(m, max(l, r));
+  elem_t minimum = min(m, min(l, r));
+  if (minimum < l && l < maximum) return l;
+  if (minimum < m && m < maximum) return m;
+  if (minimum < r && r < maximum) return r;
+}
+
 /**
  * sort an array.
  * average case time complexity:  O(n\log n)
@@ -25,7 +43,7 @@ void swap(elem_t &l, elem_t &r) {
 template <typename elem_t>
 void quick_sort(elem_t *s, elem_t *t, sort_order o = increase) {
   if (s >= t) return;
-  elem_t m = *(s + (t - s >> 1));
+  elem_t m = middle(*s, t[-1], s[t - s >> 1]);
   elem_t *l = s, *r = t - 1;
   do {
     while (*l < m == o && *l != m) ++l;
