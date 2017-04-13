@@ -18,7 +18,7 @@
 class huffman_tree {
  private:
   struct node {
-    char character;
+    int character;
     long double frequency;
     node *lchild, *rchild;
   } *root;
@@ -29,7 +29,7 @@ class huffman_tree {
   template <typename T>
   huffman_tree(const T [256]);
   std::string encode(std::string) const;
-  std::string encode(char) const;
+  std::string encode(unsigned char) const;
   std::string decode(std::string) const;
   friend struct _freq_cmp;
 };
@@ -48,8 +48,8 @@ template <typename T>
 huffman_tree::huffman_tree(const T frequency[256]) {
   std::priority_queue<node *, std::vector<node *>, _freq_cmp> forest;
   for (int i = 0; i != 256; ++i)
-    if (std::abs(frequency[i]) > FLT_EPSILON)
-      forest.push(new node{char(i), frequency[i], nullptr, nullptr});
+    if (std::abs(frequency[i]) > LDBL_EPSILON)
+      forest.push(new node{i, frequency[i], nullptr, nullptr});
   while (forest.size() > 1) {
     node *min1 = forest.top(); forest.pop();
     node *min2 = forest.top(); forest.pop();
@@ -78,12 +78,12 @@ void huffman_tree::extract_coding(huffman_tree::node *n) {
 std::string huffman_tree::encode(std::string message) const {
   std::string cipher;
   for (auto it: message) {
-    cipher += this->coding[it];
+    cipher += this->coding[(unsigned char)it];
   }
   return cipher;
 }
 
-std::string huffman_tree::encode(char message) const {
+std::string huffman_tree::encode(unsigned char message) const {
   return this->coding[message];
 }
 
