@@ -1,4 +1,3 @@
-#include <cassert>
 #include "huffman_tree.h"
 #include <algorithm>
 #include <bitset>

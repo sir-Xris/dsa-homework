@@ -12,18 +12,18 @@ using namespace std;
 
 #include "stu_info.h"
 
-const char usage[] = "\
---*-- --*-- --*-- --*-- --*-- --*-- --*-- --*-- --*-- --*-- --*-- --*--\n\
-Show all lists: all\n\
-Create list: create <list-name>\n\
-Delete list: delete <list-name>\n\
-Show list:   show   <list-name>\n\
-Insert node: insert <list-name> <student-name> <student-age>\n\
-Remove node: remove <list-name> <student-name> <student-age>\n\
-Sort list:   sort   <list-name>\n\
-Merge lists: merge  <list-name> <list-name>\n\
---*-- --*-- --*-- --*-- --*-- --*-- --*-- --*-- --*-- --*-- --*-- --*--\n\
-Please input command: ";
+const char usage[] = R"(
+--*-- --*-- --*-- --*-- --*-- --*-- --*-- --*-- --*-- --*-- --*-- --*--
+Show all lists: all
+Create list: create <list-name>
+Delete list: delete <list-name>
+Show list:   show   <list-name>
+Insert node: insert <list-name> <student-name> <student-age>
+Remove node: remove <list-name> <student-name> <student-age>
+Sort list:   sort   <list-name>
+Merge lists: merge  <list-name> <list-name>
+--*-- --*-- --*-- --*-- --*-- --*-- --*-- --*-- --*-- --*-- --*-- --*--
+Please input command: )";
 
 map<string, singly_linked_list<stu_info>> db;
 
