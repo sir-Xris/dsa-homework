@@ -18,7 +18,25 @@ Uploaded with my benchmark test source codes. I just found that benchmark should
 
 No benchmark test...
 
-use a frequency array to construct Huffman tree. Only accept ASCII characters.
+use a frequency array to construct Huffman tree.
+
+## Homework 2
+
+See homework-2/README.md
+
+## Midterm Examination
+
+See midterm/README.md
+
+## Kruskal's Algorithm
+
+`Accepted' Oriented Program. Homework tells us input data's ranges, so I just simply implemented Kruskal with limited array.
+
+And disjoint set at the same time.
+
+Should I implement Prim's algorithm at the same time?
+
+It depends.
 
 ## Quicksort and Binary Search
 
