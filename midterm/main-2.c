@@ -8,9 +8,9 @@ void swap(char *lhs, char *rhs) {
 }
 
 int main() {
-	int len = strlen(tree + 1);
+	size_t len = strlen(tree + 1);
 	for (size_t i = 2; i < len; i <<= 1)
 		for (size_t j = 0; j << 1 < i; ++j)
-			swap(&tree[i | j], &tree[(i | j) ^ i - 1]);
+			swap(&tree[i | j], &tree[(i | j) ^ (i - 1)]);
 	puts(tree + 1);
 }

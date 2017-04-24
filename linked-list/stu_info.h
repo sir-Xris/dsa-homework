@@ -26,7 +26,7 @@ bool stu_info::operator==(const stu_info &si) const {
 }
 
 bool stu_info::operator<(const stu_info &si) const {
-  return this->name < si.name || this->name == si.name && this->age < si.age;
+  return this->name < si.name || (this->name == si.name && this->age < si.age);
 }
 
 bool stu_info::operator<=(const stu_info &si) const {

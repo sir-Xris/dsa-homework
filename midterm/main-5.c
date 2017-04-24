@@ -14,7 +14,7 @@ int main() {
 	struct list *Ta = La;
 
 	long long data;
-	while (scanf("%d", &data) != EOF) {
+	while (scanf("%lld", &data) != EOF) {
 		Ta->next = malloc(sizeof(struct list));
 		Ta = Ta->next;
 		Ta->data = data;
@@ -33,11 +33,11 @@ int main() {
 
 	printf("Odd list: ");
 	for (p = La->next; p != NULL; p = p->next)
-		printf(" %d", p->data);
+		printf(" %lld", p->data);
 	putchar('\n');
 	printf("Even list:");
 	for (q = Lb->next; q != NULL; q = q->next)
-		printf(" %d", q->data);
+		printf(" %lld", q->data);
 	putchar('\n');
 
 	return 0;

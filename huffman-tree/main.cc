@@ -15,7 +15,6 @@ int main() {
   cout << endl << "\033[1mASCII bit:\033[0m" << endl;
   for (auto it: message) {
     cout << bitset<8>(it);
-    assert((unsigned char)it >= 0);
     ++frequency[(unsigned char)it];
   }
   cout << endl;

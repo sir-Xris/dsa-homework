@@ -59,7 +59,7 @@ int kruskal() {
 int main() {
 	puts("顶点输入：");
 	while (true) {
-		printf("NO %2d: ", n + 1);
+		printf("NO %2zd: ", n + 1);
 		nodename[n] = getchar();  // flush input
 		while (getchar() != '\n');
 		if (nodename[n] == '*') break;
@@ -84,9 +84,9 @@ int main() {
 	}
 	puts("adjlist:");
 	for (size_t i = 0; i != n; ++i) {
-		printf("NO %2d:  %c", i + 1, nodename[i]);
+		printf("NO %2zd:  %c", i + 1, nodename[i]);
 		for (auto &it: adjacency[i]) {
-			int to = i == it.u ? it.v : it.u;
+			size_t to = i ^ it.u ^ it.v;
 			printf("-->%c(%d)", nodename[to], it.w);
 		}
 		putchar('\n');
