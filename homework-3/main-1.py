@@ -5,7 +5,7 @@ class bintree:
         self.rchild = None
 
     def preorder(self):
-        t = self.data
+        t = '' + self.data
         if self.lchild: t += self.lchild.preorder()
         if self.rchild: t += self.rchild.preorder()
         return t
