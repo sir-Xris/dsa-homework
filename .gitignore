@@ -13,9 +13,17 @@ __pycache__
 .*.swp
 .~lock.*#
 
-# reports
+# tex mid product and log files
+*.log
+*.aux
+*.toc
+*.sty
+
+# homeworkds and reports
 *.doc
 *.docx
+*.ppt
+*.pptx
 *.pdf
 *.zip
 
